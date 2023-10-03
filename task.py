@@ -1,3 +1,4 @@
+"""Module for calculating the rotation of a ball."""
 import math
 
 
