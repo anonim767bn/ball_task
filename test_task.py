@@ -1,5 +1,7 @@
 import pytest
+
 from task import task
+
 # r, t, a, v
 test_data = (
     (1, 5, 5, 1, (267.47)),
