@@ -1,0 +1,17 @@
+name: Проверка
+on: [push]
+jobs:
+  test:
+    name: test
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Установка Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.10.6
+    - name: Установка зависимостей
+      run: |
+        pip install pytest
+    - name: test
+      run: python -m pytest
