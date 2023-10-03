@@ -10,6 +10,17 @@ test_data = (
 )
 
 
-@pytest.mark.parametrize('r, t, a, v, expected', test_data)
-def test(r: float, t: float, a: float, v: float, expected):
-    assert task(radius=r, time=t, acceleration=a, start_velocity=v) == expected
+@pytest.mark.parametrize('rad, time, acc, velo, expected', test_data)
+def test(rad: float, time: float, acc: float, velo: float, expected):
+    """Testing function
+
+    Args:
+        rad (float): The radius.
+        time (float): The time.
+        acc (float): The acceleration.
+        velo (float): The start velocity.
+    
+    Returns:
+        None
+    """
+    assert task(radius=rad, time=time, acceleration=acc, start_velocity=velo) == expected
