@@ -1,19 +1,19 @@
 import math
 
 
-def task(radius: float | int, time: float | int, acceleration: float | int, start_velocity: float | int = 0) -> float:
+def task(radius: float, time: float, acceleration: float, start_velocity: float = 0) -> float:
     """Rotation of the ball.
 
     Args:
-        radius (floatint): ball radius (in metres).
-        time (float|int): time (in seconds).
-        acceleration (float|int): The ball acceleration (metres per second squared).
-        start_velocity (float|int): The ball start velocity (metres per second).
+        radius (float) : ball radius (in metres).
+        time (float) : time (in seconds).
+        acceleration (float) : The ball acceleration (metres per second squared).
+        start_velocity (float) : The ball start velocity (metres per second).
 
     Returns:
         float - rotation of the ball in degrees.
     """
-    degress_full_circle = 360
+    degrees_full_circle = 360
     circumference = 2 * math.pi * radius
     spatium = start_velocity * time + (acceleration * (time**2)) / 2
-    return round(((spatium % circumference) / circumference * degress_full_circle), 2)
+    return round(((spatium % circumference) / circumference * degrees_full_circle), 2)
