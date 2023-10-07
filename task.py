@@ -16,5 +16,8 @@ def task(radius: float, time: float, acceleration: float, start_velocity: float 
     """
     degrees_full_circle = 360
     circumference = 2 * math.pi * radius
-    spatium = start_velocity * time + (acceleration * (time**2)) / 2
+    try:
+        spatium = start_velocity * time + (acceleration * (time**2)) / 2
+    except ZeroDivisionError:
+        return 0
     return round(((spatium % circumference) / circumference * degrees_full_circle), 2)
