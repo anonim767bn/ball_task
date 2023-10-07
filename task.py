@@ -1,20 +1,24 @@
-"""Module for calculating the rotation of a ball."""
-import math
+"""Return degrees the point of contact will rotate after rotation."""
 
 
-def task(radius: float, time: float, acceleration: float, start_velocity: float = 0) -> float:
-    """Rotation of the ball.
+from math import pi
+
+
+def get_gradus(radius: float, time: float, acl: float, speed: float) -> float:
+    """Get gradus.
 
     Args:
-        radius (float) : ball radius (in metres).
-        time (float) : time (in seconds).
-        acceleration (float) : The ball acceleration (metres per second squared).
-        start_velocity (float) : The ball start velocity (metres per second).
+        radius: float - radius of sphere
+        time: float - time of rotation
+        acl: float - acceleration of moving
+        speed: float - speed before measurement
 
     Returns:
-        float - rotation of the ball in degrees.
+        float - gradus, result of measurment
     """
-    degrees_full_circle = 360
-    circumference = 2 * math.pi * radius
-    spatium = start_velocity * time + (acceleration * (time**2)) / 2
-    return round(((spatium % circumference) / circumference * degrees_full_circle), 2)
+    full_rotation = 360
+    circle_length = 2 * round(pi, 2) * radius
+    route = time * speed + (acl * time ** 2) / 2
+
+    amount_of_rotations = round(route / circle_length, 2)
+    return amount_of_rotations * full_rotation
