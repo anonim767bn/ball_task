@@ -12,7 +12,7 @@ test_data = (
 
 
 @pytest.mark.parametrize('rad, time, acc, velo, expected', test_data)
-def test(rad: float, time: float, acc: float, velo: float, expected: tuple):
+def test(rad: float, time: float, acc: float, velo: float, expected: tuple) -> None:
     """Testing task() function.
 
     Args:
